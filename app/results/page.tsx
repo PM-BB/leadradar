@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { LeadCard } from '@/components/lead-card';
 import { SearchForm } from '@/components/search-form';
 import { getFreshnessColor } from '@/lib/demo-data';
-import { SearchResponse } from '@/lib/types';
+import type { SearchResponse } from '@/lib/types';
 
 export default function ResultsPage() {
   const params = useSearchParams();
@@ -53,8 +53,8 @@ export default function ResultsPage() {
       <div className="mb-6">
         <SearchForm
           initialQuery={data.query}
-          initialCity={''}
-          initialState={''}
+          initialCity=""
+          initialState=""
           initialCountry="India"
           initialRadius={50}
           initialFreshness={data.intent.freshness}

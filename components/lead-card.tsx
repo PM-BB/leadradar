@@ -1,6 +1,6 @@
 import { getLeadBadge, getLeadScoreClass } from '@/lib/demo-data';
 import { formatRelativeDate } from '@/lib/demo-data';
-import { LeadResult } from '@/lib/types';
+import type { LeadResult } from '@/lib/types';
 
 export function LeadCard({ lead, compact = false }: { lead: LeadResult; compact?: boolean }) {
   const relativeTime = formatRelativeDate(lead.posted_at);
