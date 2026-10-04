@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { LeadCard } from '@/components/lead-card';
+import { SearchForm } from '@/components/search-form';
 import { getFreshnessColor } from '@/lib/demo-data';
 import { SearchResponse } from '@/lib/types';
 
@@ -47,6 +50,17 @@ export default function ResultsPage() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mb-6">
+        <SearchForm
+          initialQuery={data.query}
+          initialCity={''}
+          initialState={''}
+          initialCountry="India"
+          initialRadius={50}
+          initialFreshness={data.intent.freshness}
+        />
+      </div>
+
       <div className="mb-6 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <div className="text-sm font-medium uppercase tracking-[0.18em] text-blue-600">Lead matches</div>
